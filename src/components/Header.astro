@@ -6,8 +6,8 @@ import Link from '@components/Link.astro';
 <style>
   .text {
     font-weight: 800;
-    font-size: 20px;
-    letter-spacing: 2.4px;
+    font-size: 22px;
+    letter-spacing: 2px;
   }
 
   @keyframes spin {
@@ -20,26 +20,36 @@ import Link from '@components/Link.astro';
   }
 
   .logo {
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 125px;
+    position: relative;
+    z-index: -1;
     animation: spin 12s linear infinite;
   }
 </style>
 
 <header>
   <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between items-center">
+    <div
+      class="flex flex-col sm:flex-row gap-y-2 justify-center sm:justify-between items-center"
+    >
       <Link href="/" underline={false}>
-        <svg class="logo" width="200px" viewBox="0 0 200 200">
+        <svg class="logo" viewBox="0 0 150 150">
           <defs>
-            <path
-              id="circlePath"
-              d="M100, 100 m -60, 0 a 60,60 0 1,0 120,0 a 60,60 0 1,0 -120,0"
-            ></path>
+            <defs>
+              <defs>
+                <defs>
+                  <path
+                    id="circlePath"
+                    d="M 75, 75 m -70, 0 a 70,70 0 1,0 140,0 a 70,70 0 1,0 -140,0"
+                  ></path>
+                </defs>
+              </defs>
+            </defs>
           </defs>
           <text class="fill-black dark:fill-white" width="400">
             <textPath xlink:href="#circlePath" class="text">
-              ARMANDWORLDARMANDWORLD
+              ARMAND WORLD ARMAND WORLD
             </textPath>
           </text>
         </svg>
@@ -57,7 +67,7 @@ import Link from '@components/Link.astro';
         <button
           id="theme-button"
           aria-label="Light/dark theme toggle"
-          class="group size-8 flex items-center justify-center rounded-full"
+          class="ml-4 size-8 flex items-center justify-center rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

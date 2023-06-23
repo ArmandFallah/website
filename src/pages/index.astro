@@ -41,12 +41,16 @@ const work = await Promise.all(
     <div class="space-y-16">
       <section>
         <article class="space-y-4">
-          <p class="animate">I am a cool kid :)</p>
+          <p class="animate">
+            I'm a high school senior with a passion for computer science, driven
+            by competition, creativity, and a critical thinking approach. I'm
+            fueled by a deep love for technology and a desire to build the
+            future.
+          </p>
+          <p class="animate">
+            Iranian-American 🇮🇷. Big fan of the Vegas Golden Knights.
+          </p>
         </article>
-      </section>
-
-      <section class="animate space-y-4">
-        <h5 class="font-semibold text-black dark:text-white">Let's Connect!</h5>
         <ul class="flex flex-wrap gap-2">
           {
             SOCIALS.map((SOCIAL) => (
@@ -75,7 +79,9 @@ const work = await Promise.all(
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
+          <h5
+            class="font-semibold border rounded-lg border-black dark:border-white p-2 text-black dark:text-white"
+          >
             Recent projects
           </h5>
           <Link href="/projects"> See all projects </Link>
@@ -93,7 +99,11 @@ const work = await Promise.all(
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">Latest posts</h5>
+          <h5
+            class="font-semibold border rounded-lg border-black dark:border-white p-2 text-black dark:text-white"
+          >
+            Latest posts
+          </h5>
           <Link href="/blog"> See all posts </Link>
         </div>
         <ul class="flex flex-col gap-4">
@@ -109,7 +119,9 @@ const work = await Promise.all(
 
       <section class="animate space-y-6">
         <div class="flex flex-wrap gap-y-2 items-center justify-between">
-          <h5 class="font-semibold text-black dark:text-white">
+          <h5
+            class="font-semibold border rounded-lg border-black dark:border-white p-2 text-black dark:text-white"
+          >
             Work Experience
           </h5>
           <Link href="/work"> See all work </Link>

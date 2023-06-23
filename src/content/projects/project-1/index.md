@@ -6,4 +6,4 @@ demoURL: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
 repoURL: 'https://github.com/ArmandFallah/website'
 ---
 
-It's awesome
+A social media website where people can post their feelings live!

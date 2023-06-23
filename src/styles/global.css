@@ -24,7 +24,7 @@ body {
 }
 
 header {
-  @apply bg-stone-100/75 dark:bg-stone-900/25;
+  @apply my-8 bg-stone-100/75 dark:bg-stone-900/25;
   @apply backdrop-blur-sm saturate-200;
 }
 

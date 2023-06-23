@@ -86,9 +86,6 @@ const { title, description, image = '/nano.png' } = Astro.props;
     onScroll();
     animate();
 
-    const backToPrev = document.getElementById('back-to-prev');
-    backToPrev?.addEventListener('click', () => window.history.back());
-
     const themeButton = document.getElementById('theme-button');
     themeButton?.addEventListener('click', () => {
       const userTheme = localStorage.theme;
