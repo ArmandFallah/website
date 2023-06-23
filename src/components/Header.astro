@@ -26,14 +26,26 @@ import Link from '@components/Link.astro';
     z-index: -1;
     animation: spin 12s linear infinite;
   }
+
+  html.dark .moon {
+    display: none;
+  }
+
+  .sun {
+    display: none;
+  }
+
+  html.dark .sun {
+    display: block;
+  }
 </style>
 
-<header>
+<header class="py-8 z-10 bg-stone-100/75 dark:bg-stone-900/25">
   <Container>
     <div
       class="flex flex-col sm:flex-row gap-y-2 justify-center sm:justify-between items-center"
     >
-      <Link href="/" underline={false}>
+      <a href="/">
         <svg class="logo" viewBox="0 0 150 150">
           <defs>
             <defs>
@@ -53,21 +65,17 @@ import Link from '@components/Link.astro';
             </textPath>
           </text>
         </svg>
-      </Link>
+      </a>
       <nav class="flex gap-1 items-center">
         <Link href="/projects"> projects </Link>
         <span>
           {`/`}
         </span>
         <Link href="/blog"> blog </Link>
-        <span>
-          {`/`}
-        </span>
-        <Link href="/work"> work </Link>
         <button
           id="theme-button"
           aria-label="Light/dark theme toggle"
-          class="ml-4 size-8 flex items-center justify-center rounded-full"
+          class="ml-2 size-8 flex items-center justify-center rounded-full"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -79,7 +87,7 @@ import Link from '@components/Link.astro';
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
+            class="moon group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
           >
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
@@ -93,7 +101,7 @@ import Link from '@components/Link.astro';
             stroke-width="1.5"
             stroke-linecap="round"
             stroke-linejoin="round"
-            class="group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
+            class="sun group-hover:stroke-black group-hover:dark:stroke-white transition-colors duration-300 ease-in-out"
           >
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>

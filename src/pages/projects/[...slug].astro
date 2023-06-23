@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import PageLayout from '@layouts/PageLayout.astro';
+import PageLayout from '@PageLayout.astro';
 import Container from '@components/Container.astro';
 import FormattedDate from '@components/FormattedDate.astro';
-import { readingTime } from '@lib/utils';
+import { readingTime } from '@utils';
 import Link from '@components/Link.astro';
 
 export async function getStaticPaths() {
@@ -40,13 +40,13 @@ const { Content } = await project.render();
         (project.data.demoURL || project.data.repoURL) && (
           <nav class="animate flex gap-1">
             {project.data.demoURL && (
-              <Link href={project.data.demoURL} external>
+              <Link target="_blank" href={project.data.demoURL}>
                 demo
               </Link>
             )}
             {project.data.demoURL && project.data.repoURL && <span>/</span>}
             {project.data.repoURL && (
-              <Link href={project.data.repoURL} external>
+              <Link target="_blank" href={project.data.repoURL}>
                 repo
               </Link>
             )}

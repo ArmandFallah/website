@@ -1,29 +1,26 @@
 ---
 import { getCollection } from 'astro:content';
 import Container from '@components/Container.astro';
-import PageLayout from '@layouts/PageLayout.astro';
+import PageLayout from '@PageLayout.astro';
 import ArrowCard from '@components/ArrowCard.astro';
 import Link from '@components/Link.astro';
-import { dateRange } from '@lib/utils';
+import { dateRange } from '@utils';
 import { SITE, HOME, SOCIALS } from '@consts';
 
 const blog = (await getCollection('blog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+  .slice(0, SITE.num_posts_on_homepage);
 
 const projects = (await getCollection('projects'))
   .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_PROJECTS_ON_HOMEPAGE);
+  .slice(0, SITE.num_projects_on_homepage);
 
-const allwork = (await getCollection('work'))
-  .sort(
-    (a, b) =>
-      new Date(b.data.dateStart).valueOf() -
-      new Date(a.data.dateStart).valueOf()
-  )
-  .slice(0, SITE.NUM_WORKS_ON_HOMEPAGE);
+const allwork = (await getCollection('work')).sort(
+  (a, b) =>
+    new Date(b.data.dateStart).valueOf() - new Date(a.data.dateStart).valueOf()
+);
 
 const work = await Promise.all(
   allwork.map(async (item) => {
@@ -33,7 +30,7 @@ const work = await Promise.all(
 );
 ---
 
-<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<PageLayout title={HOME.title} description={HOME.description}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
       Hi, I'm Armand <span class="text-xl">👋🏻</span>
@@ -48,19 +45,20 @@ const work = await Promise.all(
             future.
           </p>
           <p class="animate">
-            Iranian-American 🇮🇷. Big fan of the Vegas Golden Knights.
+            In my free time I like to explore the outdoors, play ice hockey, and
+            work on programming projects.
           </p>
         </article>
-        <ul class="flex flex-wrap gap-2">
+        <ul class="mt-3 animate flex flex-wrap gap-2">
           {
             SOCIALS.map((SOCIAL) => (
               <li class="flex gap-x-2 text-nowrap">
                 <Link
-                  href={SOCIAL.HREF}
-                  external
-                  aria-label={`${SITE.NAME} on ${SOCIAL.NAME}`}
+                  href={SOCIAL.href}
+                  target="_blank"
+                  aria-label={`${SITE.name} on ${SOCIAL.name}`}
                 >
-                  {SOCIAL.NAME}
+                  {SOCIAL.name}
                 </Link>
                 {'/'}
               </li>
@@ -68,10 +66,10 @@ const work = await Promise.all(
           }
           <li class="line-clamp-1">
             <Link
-              href={`mailto:${SITE.EMAIL}`}
-              aria-label={`Email ${SITE.NAME}`}
+              href={`mailto:${SITE.email}`}
+              aria-label={`Email ${SITE.name}`}
             >
-              {SITE.EMAIL}
+              {SITE.email}
             </Link>
           </li>
         </ul>
@@ -124,7 +122,6 @@ const work = await Promise.all(
           >
             Work Experience
           </h5>
-          <Link href="/work"> See all work </Link>
         </div>
         <ul class="flex flex-col space-y-4">
           {

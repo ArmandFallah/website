@@ -1,16 +1,16 @@
 ---
-import { getCollection } from "astro:content";
-import PageLayout from "@layouts/PageLayout.astro";
-import Container from "@components/Container.astro";
-import ArrowCard from "@components/ArrowCard.astro";
-import { PROJECTS } from "@consts";
+import { getCollection } from 'astro:content';
+import PageLayout from '@PageLayout.astro';
+import Container from '@components/Container.astro';
+import ArrowCard from '@components/ArrowCard.astro';
+import { PROJECTS } from '@consts';
 
-const projects = (await getCollection("projects"))
-  .filter(project => !project.data.draft)
+const projects = (await getCollection('projects'))
+  .filter((project) => !project.data.draft)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
+<PageLayout title={PROJECTS.title} description={PROJECTS.description}>
   <Container>
     <div class="space-y-10">
       <div class="animate font-semibold text-black dark:text-white">
@@ -20,7 +20,7 @@ const projects = (await getCollection("projects"))
         {
           projects.map((project) => (
             <li>
-              <ArrowCard entry={project}/>
+              <ArrowCard entry={project} />
             </li>
           ))
         }
