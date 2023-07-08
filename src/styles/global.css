@@ -13,7 +13,7 @@ html.dark {
 
 body {
   position: relative;
-  height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   overflow: auto;
@@ -22,9 +22,13 @@ body {
   @apply bg-stone-100 dark:bg-stone-900;
 }
 
+article a {
+  text-decoration: underline;
+}
+
 article ul {
   list-style: circle;
-  @apply ml-6;
+  @apply ml-6 py-2;
 }
 
 .animate {
