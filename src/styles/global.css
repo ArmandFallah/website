@@ -22,13 +22,19 @@ body {
   @apply bg-stone-100 dark:bg-stone-900;
 }
 
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 article a {
   text-decoration: underline;
 }
 
 article ul {
   list-style: circle;
-  @apply ml-6 py-2;
+  @apply ml-6 pb-2;
 }
 
 .animate {
@@ -37,5 +43,6 @@ article ul {
 }
 
 .animate.show {
-  @apply opacity-100 translate-y-0;
+  opacity: 1;
+  @apply translate-y-0;
 }
