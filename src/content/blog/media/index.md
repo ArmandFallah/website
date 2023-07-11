@@ -4,7 +4,7 @@ description: 'A realtime social media application'
 date: 'July 11 2023'
 ---
 
-https://github.com/ArmandFallah/media
+https://armand.world/media/ | https://github.com/ArmandFallah/media
 
 - Frontend: Typescript, React.js, CSS, SSE
 - Backend: node.js, express.js, postgresql

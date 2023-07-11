@@ -1,8 +1,8 @@
 ---
 company: 'Your Company?'
 role: 'Software Engineering Intern'
-dateStart: '03/25/2024'
-dateEnd: 'Current'
+dateStart: '06/15/2024'
+dateEnd: '08/29/2024'
 ---
 
 - Reduced application load times by 50% by optimizing database queries and

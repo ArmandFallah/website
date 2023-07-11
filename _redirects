@@ -1,0 +1,3 @@
+# https://docs.netlify.com/routing/redirects/
+
+/api/* https://api.armand.world/:splat 200
